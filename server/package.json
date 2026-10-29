@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "dev:atlas": "nodemon --import ./dns-fix.js index.js"
+    "dev:atlas": "nodemon --exec \"node --import ./dns-fix.js\" index.js"
   },
   "keywords": [],
   "author": "",

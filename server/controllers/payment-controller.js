@@ -51,7 +51,7 @@ class PaymentController {
       if (event.type === 'checkout.session.completed' && event.data.object.metadata?.type === "session") {
         const session = event.data.object;
         const paymentIntentId = session.payment_intent;
-        await sessionService.createSession({ paymentIntentId, ...session.metadata })
+        await sessionService.createSession({ ...session.metadata, paymentIntentId })
       }
       
       return res.json({ received: true });

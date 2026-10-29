@@ -1,18 +1,27 @@
 # Psychological Support Platform
 
-A full-stack web platform for online psychological help: clients find a suitable psychologist, book and pay for sessions, and meet by video call; specialists manage their schedule, clients and notes; admins verify specialists and requests for free support.
+A full-stack web platform for online psychological help: clients find a suitable psychologist, book and pay for sessions, and meet by video call; specialists manage their schedule, clients and notes; admins add specialists and verify requests for free support.
 
 Built as a diploma project at Igor Sikorsky Kyiv Polytechnic Institute.
 
-> Screenshots: _add 2–3 screenshots of the main pages here_
+## Screenshots
+
+**Home page**
+![Home page](docs/screenshots/home.png)
+
+**Specialists catalog with filters**
+![Specialists catalog](docs/screenshots/specialists.png)
+
+**Client dashboard**
+![Client dashboard](docs/screenshots/client-dashboard.png)
 
 ## Features
 
 **For clients**
 - Questionnaire that matches clients with suitable specialists using a weighted scoring algorithm (issues, approach, age, gender, special needs)
-- Specialist catalog with search and filters
+- Specialist catalog with filters
 - Booking based on each specialist's schedule and unavailability periods
-- Online payments with Stripe Checkout, refunds, cancelling and rescheduling sessions
+- Online payments via Stripe Payment Links, refunds, cancelling and rescheduling sessions
 - Video sessions in the browser (Jitsi)
 - Gift certificates for sessions, generated as PDF and sent by email
 - Free sessions for military personnel, veterans, IDPs and other people affected by the war — after document verification by an admin
@@ -122,7 +131,7 @@ client/          React + TypeScript frontend
     http/        axios instance and interceptors
 server/          Node.js + Express API
   controllers/   HTTP layer
-  services/      Business logic
+  service/       Business logic
   models/        Mongoose schemas
   middlewares/   Auth, roles, uploads, logging, errors
   jobs/          Background jobs (Agenda)

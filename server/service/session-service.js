@@ -14,9 +14,9 @@ import sessionModel from "../models/session-model.js";
 
 class SessionService {
   async createSession(payload) {
-    const { selectedDate, selectedSlot, specialistId, user: userId, giftId, priceId, isVictim, paymentIntentId } = payload;
+    const { selectedDate, selectedSlot, specialistId, user: userId, giftId, isVictim, paymentIntentId } = payload;
 
-    if (!isVictim && !priceId && !giftId) throw ApiError.BadRequest('Сесія не була оплачена');
+    if (!isVictim && !paymentIntentId && !giftId) throw ApiError.BadRequest('Сесія не була оплачена');
 
     const user = await UserModel.findById(userId);
     if (!user) throw ApiError.BadRequest('Спецаліста з таким id не знайдено');
