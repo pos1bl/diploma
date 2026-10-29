@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #F5F1FA;
+      font-family: Arial, sans-serif;
+    }
+    .certificate {
+      width: 148mm;
+      height: 210mm;
+      padding: 32px;
+      box-sizing: border-box;
+      background: #F5F1FA;
+      border-radius: 24px;
+      box-shadow: 0px 4px 16px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .title {
+      text-align: center;
+      color: #AC98D1;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #AC98D1;
+      font-size: 16px;
+      margin: 0;
+      margin-bottom: 32px;
+    }
+    .fields {
+      margin-bottom: 32px;
+    }
+    .field-label {
+      color: #AC98D1;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .field-value {
+      border-bottom: 2px solid #AC98D1;
+      padding: 4px 0;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .activation {
+      margin-bottom: 16px;
+    }
+    .activation .label {
+      color: #AC98D1;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .activation .code {
+      color: #8164B9;
+      font-weight: 700;
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .instructions {
+      padding-top: 16px;
+    }
+    .instructions .header {
+      color: #AC98D1;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+    }
+    .instructions .step {
+      font-size: 12px;
+      margin: 2px 0;
+    }
+    .instructions .footer {
+      font-size: 12px;
+      color: #757575;
+      margin-top: 8px;
+    }
+    .otter {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate">
+    <div>
+      <div class="logo">
+        <img src="<%= logoDataUri %>" width="150" alt="logo"/>
+      </div>
+      <h1 class="title">Подарунковий сертифікат</h1>
+      <div class="subtitle">
+        <%= amount %> сеанс<% if(amount>1){ %>ів<% } %> з психотерапевтом на Платформі
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <div class="field-label">Для</div>
+          <div class="field-value"><%= to || '—' %></div>
+        </div>
+        <div class="field">
+          <div class="field-label">Від</div>
+          <div class="field-value"><%= from || '—' %></div>
+        </div>
+      </div>
+
+      <div class="activation">
+        <span class="label">КОД АКТИВАЦІЇ: </span>
+        <span class="code"><%= code %></span>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="instructions">
+        <div class="header">Як скористатися сертифікатом:</div>
+        <div class="step">• Заповни анкету та обери фахівця на сайті</div>
+        <div class="step">• Вибери дату та час сеансу</div>
+        <div class="step">• Під час бронювання введи код активації</div>
+        <div class="step" style="margin-bottom:8px;">• Підключись на сеанс та довірся фахівюц</div>
+        <div class="footer">Сертифікат дійсний до <%= expirationDate %></div>
+      </div>
+      <div>
+        <img class="otter" src="<%= otterDataUri %>" alt="otter"/>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

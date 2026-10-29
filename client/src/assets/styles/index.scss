@@ -1,0 +1,34 @@
+@import './utilities/fonts';
+@import './utilities/vars';
+@import './base/typoghraphy';
+
+.App {
+  min-height: 100%;
+  .logout-button {
+    background-color: $color-primary;
+    font-size: 24px;
+    font-weight: 600;
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  .navigation-link {
+    width: 100%;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: all $transition-time ease-out;
+    background: linear-gradient(to right, #fff 50%, #3754f1 50%) left;
+    background-size: 200%;
+
+    &.active {
+      background-color: $color-primary;
+      background-position: right;
+      color: $color-white;
+    }
+  }
+}

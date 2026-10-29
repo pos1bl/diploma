@@ -1,0 +1,1 @@
+export const Loader = () => <div>Завантаження...</div>;
